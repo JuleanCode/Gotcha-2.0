@@ -7,7 +7,7 @@
 <h2>UserList</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "UserAdd")
 </p>
 <table class="table">
     <tr>
@@ -53,9 +53,8 @@
             @Html.DisplayFor(modelItem => item.Active)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.ActionLink("Edit", "UserEdit", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "UserDelete", new { id=item.Id })
         </td>
     </tr>
 }

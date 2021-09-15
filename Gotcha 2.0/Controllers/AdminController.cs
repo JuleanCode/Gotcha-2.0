@@ -16,6 +16,7 @@ namespace Gotcha_2._0.Controllers
             return View();
         }
 
+        // User controls for admin
         public ActionResult UserList()
         {
             List<User> user = new List<User>();
@@ -23,6 +24,18 @@ namespace Gotcha_2._0.Controllers
             user.Add(new User() { Id = 12345, Email = "Admin@gmail.com", FirstName = "Admin", LastName = "Admin", Password = "P@ssw0rd", Rol=1});
 
             return View(user);
+        }
+        public ActionResult UserAdd()
+        {
+            return View();
+        }
+        public ActionResult UserEdit()
+        {
+            return View();
+        }
+        public ActionResult UserDelete()
+        {
+            return View();
         }
     }
 }
