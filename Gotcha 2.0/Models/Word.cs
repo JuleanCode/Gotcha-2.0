@@ -7,5 +7,10 @@ namespace Gotcha_2._0.Models
 {
     public class Word
     {
+        public int Id { get; set; }
+        public int Content { get; set; }
+
+        // foreign keys
+        public int Maker_Id { get; set; }
     }
 }
