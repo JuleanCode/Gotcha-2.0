@@ -12,9 +12,9 @@ namespace Gotcha_2._0.DataAccess
     {
         public List<User> GetUsers()
         {
-            using(IDbConnection conection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("GotchaDB"))
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("GotchaDB")))
             {
-
+                return connection.Query<User>("select * from Users").ToList();
             }
         }
     }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Gotcha_2._0.Models;
+using Gotcha_2._0.DataAccess;
 
 namespace Gotcha_2._0.Controllers
 {
@@ -17,13 +18,15 @@ namespace Gotcha_2._0.Controllers
         }
 
         // User controls for admin
+
+        List<User> users = new List<User>();
         public ActionResult UserList()
         {
-            List<User> user = new List<User>();
+            UserData db = new UserData();
 
-            user.Add(new User() { Id = 12345, Email = "Admin@gmail.com", FirstName = "Admin", LastName = "Admin", Password = "P@ssw0rd", Rol= 1, Active= true});
+            users = db.GetUsers();
 
-            return View(user);
+            return View(users);
         }
         public ActionResult UserAdd()
         {
