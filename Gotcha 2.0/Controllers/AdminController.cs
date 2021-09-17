@@ -14,8 +14,6 @@ namespace Gotcha_2._0.Controllers
         {
             Session["CurentUserRol"] = "Admin";
             return View();
-
-
         }
 
         // User controls for admin

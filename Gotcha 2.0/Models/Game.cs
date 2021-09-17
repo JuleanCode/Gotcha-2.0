@@ -13,6 +13,7 @@ namespace Gotcha_2._0.Models
         public DateTime EndTime { get; set; }
         public string Location { get; set; }
         public bool Archived { get; set; }
+        public int Rating { get; set; }
 
         // foreign keys
         public int MakerId { get; set; }

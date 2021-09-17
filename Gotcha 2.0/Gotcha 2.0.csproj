@@ -45,6 +45,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.2.0.90\lib\net461\Dapper.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -124,9 +127,18 @@
     <Compile Include="Controllers\GameMasterController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PlayerController.cs" />
+    <Compile Include="DataAccess\ContractData.cs" />
+    <Compile Include="DataAccess\GameData.cs" />
+    <Compile Include="DataAccess\GameTypeData.cs" />
+    <Compile Include="DataAccess\RuleData.cs" />
+    <Compile Include="DataAccess\RuleSetData.cs" />
+    <Compile Include="DataAccess\UserData.cs" />
+    <Compile Include="DataAccess\WordData.cs" />
+    <Compile Include="DataAccess\WordSetData.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helper.cs" />
     <Compile Include="Models\Contract.cs" />
     <Compile Include="Models\Game.cs" />
     <Compile Include="Models\GameType.cs" />
