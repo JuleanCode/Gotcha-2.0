@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Gotcha_2._0.DataAccess;
+using Gotcha_2._0.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,6 +14,12 @@ namespace Gotcha_2._0.Controllers
         public ActionResult Index()
         {
             return View();
+        }
+
+        List<Game> games = new List<Game>();
+        public ActionResult GameList()
+        {
+            return View(games);
         }
     }
 }

@@ -191,6 +191,7 @@
     <Content Include="Views\Home\GameList.cshtml" />
     <Content Include="Views\Player\Index.cshtml" />
     <Content Include="Views\GameMaster\Index.cshtml" />
+    <Content Include="Views\Player\GameList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
