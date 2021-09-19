@@ -13,14 +13,5 @@ namespace Gotcha_2._0.Controllers
         {
             return View();
         }
-
-        // Game controls for player
-        public ActionResult GameList()
-        {
-            List<Game> game = new List<Game>();
-            game.Add(new Game() { Id = 12345, Name = "Best game ever" });
-
-            return View(game);
-        }
     }
 }
