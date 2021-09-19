@@ -192,7 +192,6 @@
     <Content Include="Views\Player\Index.cshtml" />
     <Content Include="Views\GameMaster\Index.cshtml" />
     <Content Include="Views\Player\GameList.cshtml" />
-    <Content Include="Views\Admin\GameTypeList.cshtml" />
     <Content Include="Views\Admin\GameTypeAdd.cshtml" />
     <Content Include="Views\Admin\GameTypeEdit.cshtml" />
     <Content Include="Views\Admin\GameTypeDelete.cshtml" />
@@ -216,6 +215,7 @@
     <Content Include="Views\Admin\GameAdd.cshtml" />
     <Content Include="Views\Admin\GameEdit.cshtml" />
     <Content Include="Views\Admin\GameDelete.cshtml" />
+    <Content Include="Views\Admin\GameTypeList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

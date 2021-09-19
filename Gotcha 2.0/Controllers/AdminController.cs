@@ -63,7 +63,9 @@ namespace Gotcha_2._0.Controllers
         // GameType controllers for admin
         public ActionResult GameTypeList()
         {
-            return View();
+            gameTypes.Add(new GameType { Id = 123, Name = "gameType", Description = "gameType" });
+
+            return View(gameTypes);
         }
         public ActionResult GameTypeAdd()
         {
@@ -81,7 +83,9 @@ namespace Gotcha_2._0.Controllers
         // Word controllers for admin
         public ActionResult WordList()
         {
-            return View();
+            words.Add(new Word { Id = 123, Content = "John Doe" });
+
+            return View(words);
         }
         public ActionResult WordAdd()
         {
@@ -99,7 +103,9 @@ namespace Gotcha_2._0.Controllers
         // WordSet controllers for admin
         public ActionResult WordSetList()
         {
-            return View();
+            wordSets.Add(new WordSet { Id = 123, Name = "John Doe" });
+
+            return View(wordSets);
         }
         public ActionResult WordSetAdd()
         {
@@ -117,7 +123,9 @@ namespace Gotcha_2._0.Controllers
         // Rule controllers for admin
         public ActionResult RuleList()
         {
-            return View();
+            rules.Add(new Rule { Id = 123, Name = "John Doe", Description = "John Doe" });
+
+            return View(rules);
         }
         public ActionResult RuleAdd()
         {
@@ -135,7 +143,9 @@ namespace Gotcha_2._0.Controllers
         // RuleSet controllers for admin
         public ActionResult RuleSetList()
         {
-            return View();
+            ruleSets.Add(new RuleSet { Id = 123, Name = "John Doe" });
+
+            return View(ruleSets);
         }
         public ActionResult RuleSetAdd()
         {
@@ -153,7 +163,9 @@ namespace Gotcha_2._0.Controllers
         // Game controllers for admin
         public ActionResult GameList()
         {
-            return View();
+            games.Add(new Game { Id = 123, Name = "John Doe", StartTime = new DateTime(2015, 12, 25), EndTime = new DateTime(2016, 12, 25), Location = "John Doe", Archived = false, Rating = 5 });
+
+            return View(games);
         }
         public ActionResult GameAdd()
         {
