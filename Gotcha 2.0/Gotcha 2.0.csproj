@@ -192,6 +192,30 @@
     <Content Include="Views\Player\Index.cshtml" />
     <Content Include="Views\GameMaster\Index.cshtml" />
     <Content Include="Views\Player\GameList.cshtml" />
+    <Content Include="Views\Admin\GameTypeList.cshtml" />
+    <Content Include="Views\Admin\GameTypeAdd.cshtml" />
+    <Content Include="Views\Admin\GameTypeEdit.cshtml" />
+    <Content Include="Views\Admin\GameTypeDelete.cshtml" />
+    <Content Include="Views\Admin\WordList.cshtml" />
+    <Content Include="Views\Admin\WordAdd.cshtml" />
+    <Content Include="Views\Admin\WordEdit.cshtml" />
+    <Content Include="Views\Admin\WordDelete.cshtml" />
+    <Content Include="Views\Admin\WordSetList.cshtml" />
+    <Content Include="Views\Admin\WordSetAdd.cshtml" />
+    <Content Include="Views\Admin\WordSetEdit.cshtml" />
+    <Content Include="Views\Admin\WordSetDelete.cshtml" />
+    <Content Include="Views\Admin\RuleList.cshtml" />
+    <Content Include="Views\Admin\RuleAdd.cshtml" />
+    <Content Include="Views\Admin\RuleEdit.cshtml" />
+    <Content Include="Views\Admin\RuleDelete.cshtml" />
+    <Content Include="Views\Admin\RuleSetList.cshtml" />
+    <Content Include="Views\Admin\RuleSetAdd.cshtml" />
+    <Content Include="Views\Admin\RuleSetEdit.cshtml" />
+    <Content Include="Views\Admin\RuleSetDelete.cshtml" />
+    <Content Include="Views\Admin\GameList.cshtml" />
+    <Content Include="Views\Admin\GameAdd.cshtml" />
+    <Content Include="Views\Admin\GameEdit.cshtml" />
+    <Content Include="Views\Admin\GameDelete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
