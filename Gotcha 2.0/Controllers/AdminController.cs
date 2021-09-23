@@ -10,6 +10,7 @@ namespace Gotcha_2._0.Controllers
 {
     public class AdminController : Controller
     {
+        UserData UserDB = new UserData();
         List<User> users = new List<User>();
         User user = new User();
 
@@ -41,9 +42,7 @@ namespace Gotcha_2._0.Controllers
         // User controllers for admin
         public ActionResult UserList()
         {
-            UserData db = new UserData();
-
-            users = db.GetUsers();
+            users = UserDB.GetUsers();
 
             return View(users);
         }
@@ -51,13 +50,35 @@ namespace Gotcha_2._0.Controllers
         {
             return View();
         }
-        public ActionResult UserEdit()
+        public ActionResult UserEdit(int Id)
         {
-            return View();
+            return View(UserDB.GetUserFromId(Id));
         }
         public ActionResult UserDelete()
         {
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult UserAdd(User user)
+        {
+            UserDB.AddUser(user);
+
+            return RedirectToAction("UserList");
+        }
+        [HttpPost]
+        public ActionResult UserEdit(User user)
+        {
+            UserDB.EditUser(user);
+
+            return RedirectToAction("UserList");
+        }
+        [HttpPost]
+        public ActionResult UserDelete(int Id)
+        {
+            UserDB.DeleteUser(Id);
+
+            return RedirectToAction("UserList");
         }
 
         // GameType controllers for admin
