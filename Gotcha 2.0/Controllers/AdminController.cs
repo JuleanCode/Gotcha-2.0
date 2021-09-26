@@ -18,18 +18,23 @@ namespace Gotcha_2._0.Controllers
         List<GameType> gameTypes = new List<GameType>();
         GameType gameType = new GameType();
 
+        WordData WordDB = new WordData();
         List<Word> words = new List<Word>();
         Word word = new Word();
 
+        WordSetData WordSetDB = new WordSetData();
         List<WordSet> wordSets = new List<WordSet>();
         WordSet wordSet = new WordSet();
 
+        RuleData RuleDB = new RuleData();
         List<Rule> rules = new List<Rule>();
         Rule rule = new Rule();
 
+        RuleSetData RuleSetDB = new RuleSetData();
         List<RuleSet> ruleSets = new List<RuleSet>();
         RuleSet ruleSet = new RuleSet();
 
+        GameData GameDB = new GameData();
         List<Game> games = new List<Game>();
         Game game = new Game();
 
@@ -167,7 +172,7 @@ namespace Gotcha_2._0.Controllers
         // Rule controllers for admin
         public ActionResult RuleList()
         {
-            rules.Add(new Rule { Id = 123, Name = "John Doe", Description = "John Doe" });
+            rules = RuleDB.GetRules();
 
             return View(rules);
         }
@@ -175,13 +180,35 @@ namespace Gotcha_2._0.Controllers
         {
             return View();
         }
-        public ActionResult RuleEdit()
+        public ActionResult RuleEdit(int id)
         {
-            return View();
+            return View(RuleDB.GetRuleFromId(id));
         }
         public ActionResult RuleDelete()
         {
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult RuleAdd(Rule rule)
+        {
+            RuleDB.AddRule(rule);
+
+            return RedirectToAction("RuleList");
+        }
+        [HttpPost]
+        public ActionResult RuleEdit(Rule rule)
+        {
+            RuleDB.EditRule(rule);
+
+            return RedirectToAction("RuleList");
+        }
+        [HttpPost]
+        public ActionResult RuleDelete(int Id)
+        {
+            RuleDB.DeleteRule(Id);
+
+            return RedirectToAction("RuleList");
         }
 
         // RuleSet controllers for admin
