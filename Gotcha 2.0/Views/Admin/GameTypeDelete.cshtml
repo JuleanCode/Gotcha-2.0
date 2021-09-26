@@ -8,35 +8,6 @@
 
 <h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>GameType</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Maker_Id)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Maker_Id)
-        </dd>
-
-    </dl>
-
     @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()
 

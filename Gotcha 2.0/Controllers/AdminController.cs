@@ -14,6 +14,7 @@ namespace Gotcha_2._0.Controllers
         List<User> users = new List<User>();
         User user = new User();
 
+        GameTypeData GameTypeDB = new GameTypeData();
         List<GameType> gameTypes = new List<GameType>();
         GameType gameType = new GameType();
 
@@ -84,7 +85,7 @@ namespace Gotcha_2._0.Controllers
         // GameType controllers for admin
         public ActionResult GameTypeList()
         {
-            gameTypes.Add(new GameType { Id = 123, Name = "gameType", Description = "gameType" });
+            gameTypes = GameTypeDB.GetGameType();
 
             return View(gameTypes);
         }
@@ -92,13 +93,35 @@ namespace Gotcha_2._0.Controllers
         {
             return View();
         }
-        public ActionResult GameTypeEdit()
+        public ActionResult GameTypeEdit(int Id)
         {
-            return View();
+            return View(GameTypeDB.GetGameTypeFromId(Id));
         }
         public ActionResult GameTypeDelete()
         {
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult GameTypeAdd(GameType gameType)
+        {
+            GameTypeDB.AddGameType(gameType);
+
+            return RedirectToAction("GameTypeList");
+        }
+        [HttpPost]
+        public ActionResult GameTypeEdit(GameType gameType)
+        {
+            GameTypeDB.EditGameType(gameType);
+
+            return RedirectToAction("GameTypeList");
+        }
+        [HttpPost]
+        public ActionResult GameTypeDelete(int Id)
+        {
+            GameTypeDB.DeleteGameType(Id);
+
+            return RedirectToAction("GameTypeList");
         }
 
         // Word controllers for admin
