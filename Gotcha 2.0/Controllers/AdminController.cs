@@ -98,9 +98,9 @@ namespace Gotcha_2._0.Controllers
         {
             return View();
         }
-        public ActionResult GameTypeEdit(int Id)
+        public ActionResult GameTypeEdit(int id)
         {
-            return View(GameTypeDB.GetGameTypeFromId(Id));
+            return View(GameTypeDB.GetGameTypeFromId(id));
         }
         public ActionResult GameTypeDelete()
         {
@@ -132,7 +132,7 @@ namespace Gotcha_2._0.Controllers
         // Word controllers for admin
         public ActionResult WordList()
         {
-            words.Add(new Word { Id = 123, Content = "John Doe" });
+            words = WordDB.GetWords();
 
             return View(words);
         }
@@ -140,13 +140,35 @@ namespace Gotcha_2._0.Controllers
         {
             return View();
         }
-        public ActionResult WordEdit()
+        public ActionResult WordEdit(int id)
         {
-            return View();
+            return View(WordDB.GetWordFromId(id));
         }
         public ActionResult WordDelete()
         {
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult WordAdd(Word word)
+        {
+            WordDB.AddWord(word);
+
+            return RedirectToAction("WordList");
+        }
+        [HttpPost]
+        public ActionResult WordEdit(Word word)
+        {
+            WordDB.EditWord(word);
+
+            return RedirectToAction("WordList");
+        }
+        [HttpPost]
+        public ActionResult WordDelete(int Id)
+        {
+            WordDB.DeleteWord(Id);
+
+            return RedirectToAction("WordList");
         }
 
         // WordSet controllers for admin
