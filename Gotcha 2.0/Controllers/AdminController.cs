@@ -182,13 +182,35 @@ namespace Gotcha_2._0.Controllers
         {
             return View();
         }
-        public ActionResult WordSetEdit()
+        public ActionResult WordSetEdit(int id)
         {
-            return View();
+            return View(WordSetDB.GetWordSetFromId(id));
         }
         public ActionResult WordSetDelete()
         {
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult WordSetAdd(WordSet wordSet)
+        {
+            WordSetDB.AddWordSet(wordSet);
+
+            return RedirectToAction("WordSetList");
+        }
+        [HttpPost]
+        public ActionResult WordSetEdit(WordSet wordSet)
+        {
+            WordSetDB.EditWordSet(wordSet);
+
+            return RedirectToAction("WordSetList");
+        }
+        [HttpPost]
+        public ActionResult WordSetDelete(int Id)
+        {
+            WordSetDB.DeleteWordSet(Id);
+
+            return RedirectToAction("WordSetList");
         }
 
         // Rule controllers for admin
