@@ -244,13 +244,35 @@ namespace Gotcha_2._0.Controllers
         {
             return View();
         }
-        public ActionResult RuleSetEdit()
+        public ActionResult RuleSetEdit(int id)
         {
-            return View();
+            return View(RuleSetDB.GetRuleSetFromId(id));
         }
         public ActionResult RuleSetDelete()
         {
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult RuleSetAdd(Rule rule)
+        {
+            RuleDB.AddRule(rule);
+
+            return RedirectToAction("RuleList");
+        }
+        [HttpPost]
+        public ActionResult RuleSetEdit(RuleSet ruleSet)
+        {
+            RuleSetDB.EditRuleSet(ruleSet);
+
+            return RedirectToAction("RuleSetList");
+        }
+        [HttpPost]
+        public ActionResult RuleSetDelete(int Id)
+        {
+            RuleSetDB.DeleteRuleSet(Id);
+
+            return RedirectToAction("RuleSetList");
         }
 
         // Game controllers for admin
