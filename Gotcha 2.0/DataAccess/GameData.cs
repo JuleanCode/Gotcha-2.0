@@ -38,7 +38,7 @@ namespace Gotcha_2._0.DataAccess
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("GotchaDB")))
             {
-                string updateQuery = @"UPDATE [dbo].[Game] SET Name = @Name, StartTime = @StartTime EndTime = @EndTime, Location = @Location, Archive = @Archived, Rating = @Rating, MakerId = @MakerId, RandomWinner = @RandomWinner, BestKill = @BestKill, RuleSet_Id = @RuleSet_Id, GameType_Id = @GameType_Id, WordSet_Id = @WordSet_Id 
+                string updateQuery = @"UPDATE [dbo].[Game] SET Name = @Name, StartTime = @StartTime, EndTime = @EndTime, Location = @Location, Archived = @Archived, Rating = @Rating, Maker_Id = @Maker_Id, RandomWinner = @RandomWinner, BestKill = @BestKill, RuleSet_Id = @RuleSet_Id, GameType_Id = @GameType_Id, WordSet_Id = @WordSet_Id 
                                         WHERE Id = @Id";
 
                 var result = connection.Execute(updateQuery, game);
