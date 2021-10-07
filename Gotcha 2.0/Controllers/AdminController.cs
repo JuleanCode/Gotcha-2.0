@@ -174,7 +174,7 @@ namespace Gotcha_2._0.Controllers
         // WordSet controllers for admin
         public ActionResult WordSetList()
         {
-            wordSets.Add(new WordSet { Id = 123, Name = "John Doe" });
+            wordSets = WordSetDB.GetWordSets();
 
             return View(wordSets);
         }
@@ -300,7 +300,7 @@ namespace Gotcha_2._0.Controllers
         // Game controllers for admin
         public ActionResult GameList()
         {
-            games.Add(new Game { Id = 123, Name = "John Doe", StartTime = new DateTime(2015, 12, 25), EndTime = new DateTime(2016, 12, 25), Location = "John Doe", Archived = false, Rating = 5 });
+            games = GameDB.GetGames();
 
             return View(games);
         }
@@ -308,13 +308,35 @@ namespace Gotcha_2._0.Controllers
         {
             return View();
         }
-        public ActionResult GameEdit()
+        public ActionResult GameEdit(int id)
         {
-            return View();
+            return View(GameDB.GetGameFromId(id));
         }
         public ActionResult GameDelete()
         {
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult GameAdd(Game game)
+        {
+            GameDB.AddGame(game);
+
+            return RedirectToAction("GameList");
+        }
+        [HttpPost]
+        public ActionResult GameEdit(Game game)
+        {
+            GameDB.EditGame(game);
+
+            return RedirectToAction("GameList");
+        }
+        [HttpPost]
+        public ActionResult GameDelete(int Id)
+        {
+            GameDB.DeleteGame(Id);
+
+            return RedirectToAction("GameList");
         }
     }
 }

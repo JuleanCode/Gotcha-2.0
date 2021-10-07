@@ -16,7 +16,7 @@ namespace Gotcha_2._0.Models
         public int Rating { get; set; }
 
         // foreign keys
-        public int MakerId { get; set; }
+        public int Maker_Id { get; set; }
         public int RandomWinner { get; set; }
         public int BestKill { get; set; }
         public int RuleSet_Id { get; set; }

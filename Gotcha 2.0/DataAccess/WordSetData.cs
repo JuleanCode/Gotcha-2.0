@@ -10,7 +10,7 @@ namespace Gotcha_2._0.DataAccess
 {
     public class WordSetData
     {
-        public List<WordSet> GetWords()
+        public List<WordSet> GetWordSets()
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("GotchaDB")))
             {
