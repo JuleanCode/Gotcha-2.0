@@ -258,7 +258,7 @@ namespace Gotcha_2._0.Controllers
         // RuleSet controllers for admin
         public ActionResult RuleSetList()
         {
-            ruleSets.Add(new RuleSet { Id = 123, Name = "John Doe" });
+            ruleSets = RuleSetDB.GetRuleSets();
 
             return View(ruleSets);
         }
@@ -276,11 +276,11 @@ namespace Gotcha_2._0.Controllers
         }
 
         [HttpPost]
-        public ActionResult RuleSetAdd(Rule rule)
+        public ActionResult RuleSetAdd(RuleSet ruleSet)
         {
-            RuleDB.AddRule(rule);
+            RuleSetDB.AddRuleSet(ruleSet);
 
-            return RedirectToAction("RuleList");
+            return RedirectToAction("RuleSetList");
         }
         [HttpPost]
         public ActionResult RuleSetEdit(RuleSet ruleSet)

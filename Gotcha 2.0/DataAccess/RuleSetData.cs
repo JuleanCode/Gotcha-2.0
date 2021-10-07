@@ -48,7 +48,7 @@ namespace Gotcha_2._0.DataAccess
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("GotchaDB")))
             {
-                connection.Execute(@"DELETE FROM [Rile] WHERE Id = @Id", new { Id = rule_Id });
+                connection.Execute(@"DELETE FROM [RuleSet] WHERE Id = @Id", new { Id = rule_Id });
             }
         }
     }
