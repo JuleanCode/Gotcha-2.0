@@ -53,8 +53,9 @@
             @Html.DisplayFor(modelItem => item.Rating)
         </td>
         <td>
-            @Html.ActionLink("Edit", "GameEdit", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "GameDelete", new { id=item.Id })
+            @Html.ActionLink("Edit", "GameEdit", new { id = item.Id }) |
+            @Html.ActionLink("Delete", "GameDelete", new { id = item.Id })
+            @Html.ActionLink("Start", "GameStart", new { id = item.Id })
         </td>
     </tr>
 }

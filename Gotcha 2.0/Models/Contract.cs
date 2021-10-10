@@ -9,7 +9,7 @@ namespace Gotcha_2._0.Models
     {
         public int Id { get; set; }
         public DateTime EliminationTime { get; set; }
-        public int Eliminations { get; set; }
+        public int Elimination { get; set; }
 
         // foreign keys
         public int Word_Id { get; set; }

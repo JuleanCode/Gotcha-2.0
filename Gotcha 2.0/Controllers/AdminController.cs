@@ -38,6 +38,10 @@ namespace Gotcha_2._0.Controllers
         List<Game> games = new List<Game>();
         Game game = new Game();
 
+        ContractData ContractDB = new ContractData();
+        List<Contract> contracts = new List<Contract>();
+        Contract contract = new Contract();
+
         // GET: Admin
         public ActionResult Index()
         {
@@ -315,6 +319,31 @@ namespace Gotcha_2._0.Controllers
         {
             return View();
         }
+        public ActionResult GameStart(int id)
+        {
+            contracts = ContractDB.GetContractsFromGame(id);
+
+            int objectsInList = contracts.Count();
+            int teller = 0;
+
+            foreach (var i in contracts)
+            {
+                if(teller + 1 == objectsInList)
+                {
+                    i.Elimination = contracts[teller].Id;
+                    
+                }
+                else
+                {
+                    i.Elimination = contracts[0].Id;
+                }
+                ContractDB.EditGame(i);
+
+                teller++;
+            }
+
+            return RedirectToAction("GameList", "Admin");
+        }
 
         [HttpPost]
         public ActionResult GameAdd(Game game)
@@ -336,6 +365,14 @@ namespace Gotcha_2._0.Controllers
             GameDB.DeleteGame(Id);
 
             return RedirectToAction("GameList");
+        }
+
+        // Contract controllers for admin
+        public ActionResult ContractList()
+        {
+            contracts = ContractDB.GetContracts();
+
+            return View(contracts);
         }
     }
 }

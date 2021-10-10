@@ -16,6 +16,7 @@ namespace Gotcha_2._0.Controllers
 
         public ActionResult Index()
         {
+            Session["CurentUserRol"] = 0;
             return RedirectToAction("Login");
         }
 
@@ -31,6 +32,7 @@ namespace Gotcha_2._0.Controllers
             User curentUser = UserDB.GetUserFromName(user);
 
             Session["CurentUserRol"] = curentUser.Rol;
+            Session["CurentUser_Id"] = curentUser.Id;
 
             if (Session["CurentUserRol"].ToString() == "1")
             {

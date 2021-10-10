@@ -21,7 +21,6 @@ namespace Gotcha_2._0.Controllers
         // GET: Player
         public ActionResult Index()
         {
-            Session["CurentUser_Id"] = "1";
             return View();
         }
         
@@ -37,6 +36,7 @@ namespace Gotcha_2._0.Controllers
             contract.Game_Id = id;
             contract.User_Id = Convert.ToInt32(Session["CurentUser_Id"]);
             contract.EliminationTime = DateTime.Now;
+            contract.Word_Id = 1;
 
             ContractDB.AddContract(contract);
 

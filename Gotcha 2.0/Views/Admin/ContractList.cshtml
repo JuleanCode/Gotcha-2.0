@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Gotcha_2._0.Models.Contract>
+
+@{
+    ViewBag.Title = "ContractList";
+}
+
+<h2>ContractList</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EliminationTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Elimination)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.EliminationTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Elimination)
+        </td>
+    </tr>
+}
+
+</table>
