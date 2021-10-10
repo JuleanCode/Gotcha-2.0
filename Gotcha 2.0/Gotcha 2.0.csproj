@@ -215,6 +215,7 @@
     <Content Include="Views\Admin\GameDelete.cshtml" />
     <Content Include="Views\Admin\GameTypeList.cshtml" />
     <Content Include="Views\Admin\WordSetList.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

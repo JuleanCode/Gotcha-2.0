@@ -41,7 +41,6 @@ namespace Gotcha_2._0.Controllers
         // GET: Admin
         public ActionResult Index()
         {
-            Session["CurentUserRol"] = "Admin";
             return View();
         }
 

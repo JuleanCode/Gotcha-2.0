@@ -24,6 +24,13 @@ namespace Gotcha_2._0.DataAccess
                 return connection.QuerySingle<User>("SELECT * FROM [Users] WHERE Id = @Id", new { Id = user_Id });
             }
         }
+        public User GetUserFromName(User user)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("GotchaDB")))
+            {
+                return connection.QuerySingle<User>("SELECT * FROM [Users] WHERE Email = @Email", new { Email = user.Email });
+            }
+        }
         public void AddUser(User user)
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("GotchaDB")))
